@@ -93,6 +93,7 @@ export const registerUser = async (
 
 
         // Send response
+        if(user){
         res.status(201).json({
             _id: user._id,
             name: user.name,
@@ -103,6 +104,11 @@ export const registerUser = async (
                 user._id.toString()
             ),
         });
+    }
+    else{
+        res.status(400).json({message :"Invalid user data "}) ;
+
+    }
 
     } catch (error: any) {
 
@@ -147,7 +153,7 @@ export const loginUser = async (
         }
 
 
-        // Find user
+        // Find (check) user
         const user = await User.findOne({
             email: email.toLowerCase(),
         });
