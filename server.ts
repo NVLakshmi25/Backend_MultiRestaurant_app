@@ -12,6 +12,8 @@ import connectDB from "./config/db.js";
 
 import authRouter from "./routes/AuthRoutes.js";
 
+import { Restaurant } from "./models/Restaurant.js";
+
 
 const app = express();
 
@@ -59,6 +61,9 @@ app.use(
     "/api/auth",
     authRouter
 );
+// ------------------------------------------------------
+app.use("/api/auth", authRouter)
+app.use("/api/restaurants", authRouter)
 
 
 // ==========================================
