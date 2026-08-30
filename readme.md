@@ -1536,3 +1536,21 @@ Allow / Deny
 
 The project is a good foundation for building larger applications such as e-commerce systems, employee management systems, real-estate platforms, learning management systems, and other role-based applications.
 ----------------------------------------------------------------------------------------------------------------
+POST   /api/auth/register
+        ↓
+POST   /api/auth/login
+        ↓
+        JWT token
+        ↓
+GET    /api/auth/me
+        ↓
+GET    /api/restaurants
+        ↓
+GET    /api/restaurants/:slug
+        ↓
+POST   /api/bookings
+        ↓
+GET    /api/bookings/my
+        ↓
+PUT    /api/bookings/:id/cancel
+------------------------------------------------------

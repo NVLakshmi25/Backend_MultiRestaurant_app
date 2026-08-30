@@ -12,7 +12,9 @@ import connectDB from "./config/db.js";
 
 import authRouter from "./routes/AuthRoutes.js";
 
-import { Restaurant } from "./models/Restaurant.js";
+
+import restaurantRouter from "./routes/restaurantRoutes.js";
+import bookingRouter from "./routes/bookingRoutes.js";
 
 
 const app = express();
@@ -63,7 +65,8 @@ app.use(
 );
 // ------------------------------------------------------
 app.use("/api/auth", authRouter)
-app.use("/api/restaurants", authRouter)
+app.use("/api/restaurants", restaurantRouter)
+app.use("/api/bookings", bookingRouter)
 
 
 // ==========================================
