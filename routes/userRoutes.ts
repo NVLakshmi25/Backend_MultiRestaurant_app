@@ -1,20 +1,28 @@
-import { Router } from "express";
+
+import { Router, Response } from "express";
 
 import {
     protect,
     adminOnly,
-} from "../middlewares/authmiddleware.js";
+    AuthRequest,
+} from "../middlewares/authMiddleware.js";
+
 
 const userRouter = Router();
 
 
-// Any logged-in user
+// ==========================================
+// Get User Profile
+// GET /api/users/profile
+// Protected
+// ==========================================
+
 userRouter.get(
     "/profile",
     protect,
-    (req, res) => {
+    (req: AuthRequest, res: Response) => {
 
-        res.json({
+        res.status(200).json({
             message: "Profile accessed successfully",
             user: req.user,
         });
@@ -23,19 +31,25 @@ userRouter.get(
 );
 
 
-// Admin only
+// ==========================================
+// Admin Only Route
+// GET /api/users/admin
+// Protected + Admin
+// ==========================================
+
 userRouter.get(
     "/admin",
     protect,
     adminOnly,
-    (req, res) => {
+    (req: AuthRequest, res: Response) => {
 
-        res.json({
+        res.status(200).json({
             message: "Welcome Admin!",
             user: req.user,
         });
 
     }
 );
+
 
 export default userRouter;

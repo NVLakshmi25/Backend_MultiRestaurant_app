@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken" ;
+import bcrypt from "bcrypt" ;
 
 import { User } from "../models/User.js";
-import { AuthRequest } from "../middlewares/auth.js";
+import { AuthRequest } from "../middlewares/authMiddleware.js";
 
 // ==========================================
 // Generate JWT Token

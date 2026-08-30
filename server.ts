@@ -1,3 +1,4 @@
+
 import "dotenv/config";
 
 import express, {
@@ -11,11 +12,15 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 
 import authRouter from "./routes/AuthRoutes.js";
-
-
 import restaurantRouter from "./routes/restaurantRoutes.js";
 import bookingRouter from "./routes/bookingRoutes.js";
+import userRouter from "./routes/userRoutes.js";
+import ownerRouter from "./routes/ownerRoutes.js";
 
+
+// ==========================================
+// Create Express App
+// ==========================================
 
 const app = express();
 
@@ -28,7 +33,7 @@ await connectDB();
 
 
 // ==========================================
-// Middleware
+// Global Middleware
 // ==========================================
 
 app.use(cors());
@@ -44,29 +49,96 @@ const port = process.env.PORT || 5000;
 
 
 // ==========================================
-// Home route
+// Home Route
 // ==========================================
 
 app.get(
     "/",
     (req: Request, res: Response) => {
-        res.send("Server is Live!");
+        res.status(200).send("Server is Live!");
     }
 );
 
 
 // ==========================================
-// Auth routes
+// Authentication Routes
 // ==========================================
+
+// Register
+// POST /api/auth/register
+
+// Login
+// POST /api/auth/login
+
+// Get current user
+// GET /api/auth/me
 
 app.use(
     "/api/auth",
     authRouter
 );
-// ------------------------------------------------------
-app.use("/api/auth", authRouter)
-app.use("/api/restaurants", restaurantRouter)
-app.use("/api/bookings", bookingRouter)
+
+
+// ==========================================
+// User Routes
+// ==========================================
+
+// User profile
+// GET /api/users/profile
+
+// Admin route
+// GET /api/users/admin
+
+app.use(
+    "/api/users",
+    userRouter
+);
+
+
+// ==========================================
+// Restaurant Routes
+// ==========================================
+
+// Get all restaurants
+// GET /api/restaurants
+
+// Get featured restaurants
+// GET /api/restaurants/featured
+
+// Get restaurant by slug
+// GET /api/restaurants/:slug
+
+// Get availability
+// GET /api/restaurants/:id/availability
+
+app.use(
+    "/api/restaurants",
+    restaurantRouter
+);
+
+
+// ==========================================
+// Booking Routes
+// ==========================================
+
+// Create booking
+// POST /api/bookings
+
+// Get my bookings
+// GET /api/bookings/my
+
+// Cancel booking
+// PUT /api/bookings/:id/cancel
+
+app.use(
+    "/api/bookings",
+    bookingRouter
+);
+// ==========================================
+// Owner routes
+// ==========================================
+
+app.use("/api/owner" , ownerRouter)
 
 
 // ==========================================
@@ -101,7 +173,7 @@ app.use(
 
 
 // ==========================================
-// Start server
+// Start Server
 // ==========================================
 
 app.listen(
@@ -112,3 +184,4 @@ app.listen(
         );
     }
 );
+

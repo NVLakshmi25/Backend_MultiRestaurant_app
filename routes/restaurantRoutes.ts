@@ -5,7 +5,7 @@ import {
     getRestaurantAvailability,
     getRestaurantBySlug,
     getRestaurants,
-} from "../controllers/restaurantController.js";
+} from "../controllers/RestaurantController.js";
 
 const restaurantRouter = Router();
 

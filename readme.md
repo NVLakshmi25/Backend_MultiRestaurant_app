@@ -1,6 +1,17 @@
 https://github.com/GreatStackDev/notes/blob/main/Basic_Express_with_Typescript.md 
 
 
+
+https://console.cloudinary.com/ 
+
+https://app.coderabbit.ai/
+
+npm i cloudinary
+npm i multer
+
+npm install -D @types/multer
+
+
   create  a basic   typescript  app
 Tasks ListedInitialized backend server with MongoDB database connectivity.Added health check endpoint for server status monitoring.Configured server environment with middleware support and database integration.    Show more
 
@@ -1554,3 +1565,23 @@ GET    /api/bookings/my
         ↓
 PUT    /api/bookings/:id/cancel
 ------------------------------------------------------
+/api/auth
+    POST /register
+    POST /login
+    GET  /me
+
+/api/users
+    GET /profile
+    GET /admin
+
+/api/restaurants
+    GET / 
+    GET /featured
+    GET /:slug
+    GET /:id/availability
+
+/api/bookings
+    POST / 
+    GET /my
+    PUT /:id/cancel
+    ------------------------

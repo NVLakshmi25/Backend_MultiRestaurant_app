@@ -6,7 +6,7 @@ import {
     getMe,
 } from "../controllers/auth.js";
 
-import { protect } from "../middlewares/authmiddleware.js";
+import { protect } from "../middlewares/authMiddleware.js";
 
 const authRouter = Router();
 
