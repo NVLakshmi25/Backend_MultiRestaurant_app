@@ -104,15 +104,14 @@ const BookingSchema = new Schema<IBooking>(
 // Generate Booking ID automatically
 // ==========================================
 
-BookingSchema.pre("validate", function (next) {
+BookingSchema.pre("validate", async function () {
     if (!this.bookingId) {
-        this.bookingId = `GR-${crypto
-            .randomBytes(4)
-            .toString("hex")
-            .toUpperCase()}`;
+        this.bookingId =
+            `GR-${crypto
+                .randomBytes(4)
+                .toString("hex")
+                .toUpperCase()}`;
     }
-
-    next();
 });
 
 // ==========================================

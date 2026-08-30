@@ -16,6 +16,7 @@ import restaurantRouter from "./routes/restaurantRoutes.js";
 import bookingRouter from "./routes/bookingRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import ownerRouter from "./routes/ownerRoutes.js";
+import adminRouter from "./routes/adminRoutes.js";
 
 
 // ==========================================
@@ -139,6 +140,16 @@ app.use(
 // ==========================================
 
 app.use("/api/owner" , ownerRouter)
+
+// ==========================================
+// Admin routes
+// ==========================================
+
+app.use(
+    "/api/admin",
+    adminRouter
+);
+
 
 
 // ==========================================
