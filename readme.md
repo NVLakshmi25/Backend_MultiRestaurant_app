@@ -1585,3 +1585,66 @@ PUT    /api/bookings/:id/cancel
     GET /my
     PUT /:id/cancel
     ------------------------
+    # QuickDine Backend – Authentication, Restaurants & Booking
+
+## Summary
+
+Implemented the backend functionality for the QuickDine restaurant reservation application using Node.js, Express.js, TypeScript, MongoDB, and Mongoose.
+
+## Changes
+
+* Added user registration and login using bcrypt and JWT.
+* Added authentication middleware using JWT.
+* Added role-based authorization for admin and restaurant owners.
+* Added restaurant listing and filtering.
+* Added restaurant availability functionality.
+* Added restaurant booking functionality.
+* Added booking cancellation.
+* Added owner restaurant management.
+* Added owner booking management.
+* Added Cloudinary image upload support.
+* Added Multer for handling image uploads.
+* Added MongoDB models for users, restaurants, and bookings.
+
+## API Areas
+
+* `/api/auth`
+* `/api/restaurants`
+* `/api/bookings`
+* `/api/owner`
+
+## Technologies
+
+* Node.js
+* Express.js
+* TypeScript
+* MongoDB
+* Mongoose
+* JWT
+* bcrypt
+* Cloudinary
+* Multer
+
+## Purpose
+
+This PR adds the core backend functionality required for authentication, restaurant management, image uploads, and restaurant reservations.
+
+------------------------------------------------------------------------
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/auth/me
+
+GET    /api/restaurants
+GET    /api/restaurants/featured
+
+POST   /api/bookings
+GET    /api/bookings/my
+PUT    /api/bookings/:id/cancel
+
+GET    /api/owner/restaurant
+POST   /api/owner/restaurant
+PUT    /api/owner/restaurant
+
+GET    /api/owner/bookings
+PUT    /api/owner/bookings/:id/status
+--------------------------------------------
