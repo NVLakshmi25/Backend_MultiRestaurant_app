@@ -22,6 +22,7 @@ await connectDB();
 app.use(cors({
     origin: [
         "http://localhost:5173",
+        "https://multi-restaurant-booking-app-froten.vercel.app/" ,
     ],
     credentials: true,
 }));
