@@ -1809,4 +1809,15 @@ npm install && npm run build
 Start Command
 npm start
 -----------------------------
+app.use("/api/auth", authRouter);
+
+app.use("/api/users", userRouter);
+
+app.use("/api/restaurants", restaurantRouter);
+
+app.use("/api/bookings", bookingRouter);
+
+app.use("/api/owner", ownerRouter);
+
+app.use("/api/admin", adminRouter);
 
