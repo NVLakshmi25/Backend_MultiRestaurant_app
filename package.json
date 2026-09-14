@@ -5,10 +5,10 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon --exec tsx server.ts",
-    "server": "nodemon --exec tsx server.ts",
-    "seed": "tsx seed.ts",
-    "build": "tsc",
-    "start": "node dist/server.js"
+  "server": "nodemon --exec tsx server.ts",
+  "seed": "tsx seed.ts",
+  "build": "tsc",
+  "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",

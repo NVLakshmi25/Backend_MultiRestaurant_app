@@ -1803,4 +1803,10 @@ exists.
 Finally:
 
 npm start
+---------------------------
+Build Command
+npm install && npm run build
+Start Command
+npm start
+-----------------------------
 
